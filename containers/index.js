@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Box, Image } from "rebass";
+import { Box, Image, Flex } from "rebass";
 import Link from "next/link";
 import throttle from "lodash/throttle";
 
@@ -78,47 +78,68 @@ const Index = ({ locations: _locations }) => {
   }, []);
 
   return (
-    <Box as="ul" p="10px 8px" pb="36px">
-      {items.map((location) => {
-        return (
-          <Link
-            href={`/locations/[locationSlug]`}
-            as={`/locations/${location.id}`}
-            key={location.id}
-          >
-            <Box
-              as="li"
-              mb="8px"
-              sx={{
-                cursor: "pointer",
-              }}
+    <>
+      <Box
+        p="10px 8px"
+        pb="36px"
+        sx={{
+          display: "grid",
+          gridGap: "8px",
+          "@media screen and (min-width: 416px)": {
+            gridTemplateColumns: "repeat(auto-fit, minmax(398px, 1fr))",
+          },
+        }}
+      >
+        {items.map((location) => {
+          return (
+            <Link
+              href={`/locations/[locationSlug]`}
+              as={`/locations/${location.id}`}
+              key={location.id}
             >
-              <LocationCard {...location} />
-            </Box>
-          </Link>
-        );
-      })}
+              <Box
+                mb="8px"
+                sx={{
+                  cursor: "pointer",
+                }}
+                width="100%"
+                ml="auto"
+                mr="auto"
+              >
+                <LocationCard {...location} />
+              </Box>
+            </Link>
+          );
+        })}
+      </Box>
+
       {page.current !== null && (
-        <Image
-          src={spinner}
-          sx={
-            isLoading
-              ? {
-                  opacity: "1",
-                  height: "auto",
-                  width: "100%",
-                  transition: "opacity ease-in 0.5s",
-                }
-              : {
-                  opacity: 0,
-                  transition: "opacity  ease-in 0.5s",
-                  height: 0,
-                  overflow: "hidden",
-                }
-          }
-        />
+        <Flex width="100%">
+          <Image
+            src={spinner}
+            sx={
+              isLoading
+                ? {
+                    opacity: "1",
+                    height: "auto",
+                    width: "100%",
+                    transition: "opacity ease-in 0.5s",
+                    objectFit: "contain",
+                  }
+                : {
+                    opacity: 0,
+                    transition: "opacity  ease-in 0.5s",
+                    height: 0,
+                    overflow: "hidden",
+                    objectFit: "contain",
+                  }
+            }
+            maxWidth="500px"
+            mx="auto"
+          />
+        </Flex>
       )}
-    </Box>
+    </>
   );
 };
 

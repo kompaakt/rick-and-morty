@@ -10,6 +10,7 @@ const LocationCard = ({ name, type, residents }) => {
       sx={{
         backgroundColor: "#312A2A",
         color: "white",
+        boxShadow: "2px 2px 10px rgba(29, 99, 234, 0.48)",
       }}
       maxHeight="145px"
       alignItems="center"
@@ -45,7 +46,7 @@ const LocationCard = ({ name, type, residents }) => {
         >
           {residents.length > 0 &&
             residents[0].id !== null &&
-            residents.slice(0, 20).map(({ image, id, name: residentName }) => (
+            residents.slice(0, 3).map(({ image, id, name: residentName }) => (
               <Link
                 href={`/residents/[residentSlug]`}
                 as={`/residents/${id}`}

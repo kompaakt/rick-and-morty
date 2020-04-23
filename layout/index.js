@@ -31,6 +31,9 @@ const Layout = ({ children }) => {
           sx={{
             flex: "1 1 auto",
           }}
+          maxWidth="1440px"
+          mx="auto"
+          width="100%"
         >
           {children}
         </Box>

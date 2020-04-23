@@ -53,7 +53,15 @@ const Location = ({ name, type, residents }) => {
             >
               Residents
             </Text>
-            <Box>
+            <Box
+              sx={{
+                display: "grid",
+                gridGap: "8px",
+                "@media screen and (min-width: 416px)": {
+                  gridTemplateColumns: "repeat(auto-fit, minmax(398px, 1fr))",
+                },
+              }}
+            >
               {residents.map((resident) => (
                 <Link
                   href="/residents/[residentSlug]"
@@ -66,6 +74,7 @@ const Location = ({ name, type, residents }) => {
                     sx={{
                       cursor: "pointer",
                     }}
+                    width="100%"
                   >
                     <ResidentCard {...resident} />
                   </Box>

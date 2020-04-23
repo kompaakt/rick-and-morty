@@ -10,7 +10,8 @@ const ResidentCard = ({
   return (
     <Flex
       sx={{
-        backgroundColor: "#312A2A",
+        backgroundColor: "#073955",
+        boxShadow: "2px 2px 10px rgba(29, 99, 234, 0.48)",
         color: "white",
       }}
       alignItems="center"
@@ -37,7 +38,14 @@ const ResidentCard = ({
         >
           {name}
         </Text>
-        <Text mb="7px" variant="subtitle">
+        <Text
+          mb="7px"
+          variant="subtitle"
+          sx={{
+            whiteSpace: "nowrap",
+            overflowY: "auto",
+          }}
+        >
           {originName}
         </Text>
         <Text variant="subtitle">{species}</Text>

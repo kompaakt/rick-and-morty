@@ -53,13 +53,13 @@ const Resident = ({
         <Text variant="title" color="white">
           Status:
         </Text>
-        <Text mb="9px" variant="title" color="DCDCDC">
-          >{status}
+        <Text mb="9px" variant="title" color="white">
+          {status}
         </Text>
         <Text variant="title" color="white">
           Home planet:
         </Text>
-        <Text variant="title" color="#DCDCDC">
+        <Text variant="title" color="white">
           {locationName}
         </Text>
       </Box>

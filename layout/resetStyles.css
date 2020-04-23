@@ -1,0 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=block");
+
+body {
+  margin: 0;
+  background: url("../public/images/galaxy.png");
+  font-family: "Roboto", sans-serif;
+}

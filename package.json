@@ -3,13 +3,26 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "NODE_PATH=. next dev",
+    "build": "NODE_PATH=. next build",
     "start": "next start"
   },
   "dependencies": {
+    "emotion-theming": "^10.0.27",
+    "graphql-request": "^1.8.2",
+    "lodash": "^4.17.15",
     "next": "9.3.5",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "rebass": "^4.0.7"
+  },
+  "devDependencies": {
+    "imagemin-mozjpeg": "^8.0.0",
+    "imagemin-optipng": "^7.1.0",
+    "imagemin-svgo": "^7.1.0",
+    "responsive-loader": "^1.2.0",
+    "next-compose-plugins": "^2.2.0",
+    "next-optimized-images": "^2.5.8",
+    "jimp": "^0.10.3"
   }
 }

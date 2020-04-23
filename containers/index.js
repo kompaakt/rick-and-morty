@@ -7,7 +7,7 @@ import LocationCard from "components/cards/location";
 
 import client from "utils/client";
 
-import spinner from "public/images/spinner.gif";
+import spinner from "public/images/spinner2.gif";
 
 const GET_LOCATIONS_QUERY = `
   query getLocations($page: Int) {
@@ -83,9 +83,9 @@ const Index = ({ locations: _locations }) => {
         p="10px 8px"
         pb="36px"
         sx={{
-          display: "grid",
-          gridGap: "8px",
           "@media screen and (min-width: 416px)": {
+            display: "grid",
+            gridGap: "8px",
             gridTemplateColumns: "repeat(auto-fit, minmax(398px, 1fr))",
           },
         }}
@@ -103,8 +103,7 @@ const Index = ({ locations: _locations }) => {
                   cursor: "pointer",
                 }}
                 width="100%"
-                ml="auto"
-                mr="auto"
+                mx="auto"
               >
                 <LocationCard {...location} />
               </Box>
@@ -114,28 +113,26 @@ const Index = ({ locations: _locations }) => {
       </Box>
 
       {page.current !== null && (
-        <Flex width="100%">
+        <Flex width="100%" justifyContent="center">
           <Image
             src={spinner}
             sx={
               isLoading
                 ? {
                     opacity: "1",
-                    height: "auto",
-                    width: "100%",
                     transition: "opacity ease-in 0.5s",
                     objectFit: "contain",
+                    height: "300px",
                   }
                 : {
                     opacity: 0,
                     transition: "opacity  ease-in 0.5s",
                     height: 0,
                     overflow: "hidden",
-                    objectFit: "contain",
                   }
             }
-            maxWidth="500px"
-            mx="auto"
+            maxWidth="600px"
+            minWidth="300px"
           />
         </Flex>
       )}

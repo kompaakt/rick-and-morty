@@ -55,9 +55,9 @@ const Location = ({ name, type, residents }) => {
             </Text>
             <Box
               sx={{
-                display: "grid",
-                gridGap: "8px",
                 "@media screen and (min-width: 416px)": {
+                  display: "grid",
+                  gridGap: "8px",
                   gridTemplateColumns: "repeat(auto-fit, minmax(398px, 1fr))",
                 },
               }}

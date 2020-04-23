@@ -91,7 +91,6 @@ const Index = ({ locations: _locations }) => {
               mb="8px"
               sx={{
                 cursor: "pointer",
-                scrollSnapAlign: "start",
               }}
             >
               <LocationCard {...location} />

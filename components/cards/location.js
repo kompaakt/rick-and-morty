@@ -19,6 +19,7 @@ const LocationCard = ({ name, type, residents }) => {
         width="145px"
         height="145px"
         minWidth="145px"
+        maxWidth="145px"
         alt={type}
       />
       <Box p="16px 16px 11px 16px" width="100%" height="100%">

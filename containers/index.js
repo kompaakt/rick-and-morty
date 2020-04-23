@@ -59,6 +59,10 @@ const Index = ({ locations: _locations }) => {
     return;
   };
 
+  useEffect(() => {
+    handleScroll();
+  }, []);
+
   const handleScroll = () => {
     if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
       if (page.current === null || isLoading === true) return;
